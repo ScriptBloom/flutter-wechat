@@ -5,13 +5,13 @@
 > 包含了flutter中基本所有的组件，适合以此项目进行flutter学习。
 
 ## 页面展示
-![git](https://github.com/ding-zou/flutter-wechat/tree/master/snapshot/sr.gif)
-![image1](https://github.com/ding-zou/flutter-wechat/tree/master/snapshot/home.png)
-![image2](https://github.com/ding-zou/flutter-wechat/tree/master/snapshot/contact.png)
-![image3](https://github.com/ding-zou/flutter-wechat/tree/master/snapshot/discover.png)
-![image4](https://github.com/ding-zou/flutter-wechat/tree/master/snapshot/mine.png)
-![image5](https://github.com/ding-zou/flutter-wechat/tree/master/snapshot/search.png)
-![image6](https://github.com/ding-zou/flutter-wechat/tree/master/snapshot/chat.png)
+![git](https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/sr.gif)
+![image1](https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/home.png)
+![image2](https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/contact.png)
+![image3](https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/discover.png)
+![image4](https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/mine.png)
+![image5](https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/search.png)
+![image6](https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/chat.png)
 
 
 
