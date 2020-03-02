@@ -5,23 +5,24 @@
 > 包含了flutter中基本所有的组件，适合以此项目进行flutter学习。
 
 ## 页面展示
-<p float="left">
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/sr.gif" width="300" />
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/home.png" width="300" />
+<p float="center">
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/sr.gif" width="500" />
   </p>
 <p float="left">
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/contact.png" width="300" />
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/discover.png"  width="300"/>
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/home.png" width="500" />
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/contact.png" width="500" />
 </p>
 <p float="left">
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/mine.png" width="300" />
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/search.png" width="300" />
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/discover.png"  width="500"/>
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/mine.png" width="500" />
 </p>
 <p float="left">
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/mine.png" width="300" />
-  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/chat.png" width="300" />
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/search.png" width="500" />
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/mine.png" width="500" />
 </p>
-
+<p float="center">
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/chat.png" width="500" />
+  </p>
 
 
 ## DONE
