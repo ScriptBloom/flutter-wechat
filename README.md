@@ -3,7 +3,8 @@
 #### 🔥A flutter app which clones wechat！ 这是一个仿照微信样式基于flutter实现的app，还在继续完善中，欢迎提pull request 
 
 > 包含了flutter中基本所有的组件，适合以此项目进行flutter学习。
-![体验Apk点此下载](http://dzou.wangminwei.top/app-release.apk)
+
+[体验Apk点此下载](http://dzou.wangminwei.top/app-release.apk)
 ## 页面展示
 <p float="center">
   <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/sr.gif" width="400" />
