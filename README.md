@@ -27,6 +27,7 @@
   </p>
  <p float="center">
    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/contact_letter.png" width="400" />
+   <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/splash.png" width="400" />
    </p>
 
 
