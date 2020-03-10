@@ -1,6 +1,6 @@
 # flutter_wechat
 
-#### 🔥A flutter app which clones wechat！ 这是一个仿照微信样式基于flutter实现的app，还在继续完善中，欢迎提pull request 
+#### 🔥A flutter app which clones wechat，it's on the roadmw！ 这是一个仿照微信样式基于flutter实现的app，还在继续完善中，欢迎提pull request 
 
 > 包含了flutter中基本所有的组件，适合以此项目进行flutter学习。
 
@@ -22,17 +22,23 @@
 </p>
 <p float="center">
   <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/chat.png" width="400" />
+  <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/qrcode.jpg" width="400" />
   </p>
+ <p float="center">
+   <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/contact_letter.png" width="400" />
+   </p>
 
 
 ## DONE
 
 - [x] 首页
-- [x] 通讯录页(通讯录页字母表跳转)
+- [x] 通讯录页(通讯录页字母表跳转,点击长按字母弹窗)
 - [x] 发现页
 - [x] 我的页面
 - [x] 聊天页
 - [x] 搜索页
+- [x] Splash页
+- [x] 二维码扫描页(native+flutter)
 
 ## TODO
 

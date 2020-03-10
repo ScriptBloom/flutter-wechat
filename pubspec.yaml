@@ -19,6 +19,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #权限
+  permission_handler: ^3.0.0
+  flutter_svg: ^0.3.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -73,6 +76,10 @@ flutter:
     - images/default_nor_avatar.png
     - images/avatar.png
     - images/chat_bg.png
+    - images/falsh.svg
+    - images/flash.png
+    - images/qrcode.png
+    - images/wechat_splash.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

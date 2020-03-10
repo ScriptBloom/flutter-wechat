@@ -62,6 +62,8 @@ class StateContactPage extends State<ContactPage> {
   List<ContactModel> _letterList = [];
   List<ContactModel> _baseContactList = [];
   ScrollController _scrollController = ScrollController();
+  bool _showLetterHintBar = false;
+  String _letterHintBarLt = "";
 
   /// 用于控制字母对应位置
   Map<String, double> _letterPositions = {};
@@ -93,6 +95,9 @@ class StateContactPage extends State<ContactPage> {
                 children: list,
               ),
               _letterIndexView(),
+              _showLetterHintBar
+                  ? Center(child: _letterHintBar())
+                  : Container(),
             ]))),
       ]),
     );
@@ -101,6 +106,7 @@ class StateContactPage extends State<ContactPage> {
   @override
   void initState() {
     super.initState();
+
     /// 模拟接收到的数据
     List<ContactModel> commonList = ContactApi.mock();
     _starFriendsList.addAll(commonList);
@@ -117,7 +123,8 @@ class StateContactPage extends State<ContactPage> {
     /// 计算第一个字母开始位置
     topFixHeight = ITEM_HEIGHT * BASE_CONTACT_COUNT +
         LETTER_ITEM_BAR_HEIGHT +
-        ITEM_HEIGHT * _starFriendsList.length + SEARCH_BAR_HEIGHT;
+        ITEM_HEIGHT * _starFriendsList.length +
+        SEARCH_BAR_HEIGHT;
 
     /// 起点
     _letterPositions[INDEX_LETTERS[0]] = 0;
@@ -262,9 +269,8 @@ class StateContactPage extends State<ContactPage> {
         searchBarType: SearchBarType.normal_page,
         hint: "搜索",
         inputBoxClick: () {
-          Navigator.push(context, MaterialPageRoute(
-              builder: (context)=> SearchPage()
-          ));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SearchPage()));
         },
       ),
     );
@@ -333,7 +339,28 @@ class StateContactPage extends State<ContactPage> {
                   setState(() {
                     _onTap = letter;
                     _jumpToLetter(letter);
+                    _letterHintBarLt = letter;
+                    _showLetterHintBar = true;
                   });
+                  Future.delayed(Duration(milliseconds: 500), () {
+                    setState(() {
+                      _showLetterHintBar = false;
+                    });
+                  });
+                },
+                onLongPress: () {
+                  setState(() {
+                    _onTap = letter;
+                    _letterHintBarLt = letter;
+                    _showLetterHintBar = true;
+                  });
+                },
+                onLongPressEnd: (LongPressEndDetails endDetails) {
+                  setState(() {
+                    _onTap = letter;
+                    _showLetterHintBar = false;
+                  });
+                  _jumpToLetter(letter);
                 },
                 child: Padding(
                     padding: EdgeInsets.only(top: 2.5, bottom: 2.5),
@@ -359,6 +386,25 @@ class StateContactPage extends State<ContactPage> {
                               ),
                             )))))))
             .toList(),
+      ),
+    );
+  }
+
+  /// 点击字母屏幕中心弹窗
+  _letterHintBar() {
+    return Card(
+      color: Colors.black54,
+      child: Container(
+        alignment: Alignment.center,
+        width: 80.0,
+        height: 80.0,
+        child: Text(
+          _letterHintBarLt,
+          style: TextStyle(
+            fontSize: 32.0,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
