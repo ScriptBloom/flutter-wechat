@@ -4,7 +4,7 @@
 
 > 包含了flutter中基本所有的组件，适合以此项目进行flutter学习。
 
-[体验Apk点此下载](http://dzou.wangminwei.top/app-release.apk)(Note:头像图片资源有墙)
+[最新体验Apk点此下载](http://dzou.wangminwei.top/app-release.apk)(Note:头像图片资源有墙)
 ## 页面展示
 <p float="center">
   <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/sr.gif" width="400" />
