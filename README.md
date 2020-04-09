@@ -31,11 +31,12 @@
    </p>
 <p float="center">
     <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national1.png" width="400" />
-    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national2.png" width="400" />
+        <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national3.png" width="400" />
+
 </p>
 <p float="center">
-    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national3.png" width="400" />
     <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national4.png" width="400" />
+        <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national2.png" width="400" />
 </p>
 
 
