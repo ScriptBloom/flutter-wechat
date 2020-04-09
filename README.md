@@ -29,6 +29,14 @@
    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/contact_letter.png" width="400" />
    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/splash.png" width="400" />
    </p>
+<p float="center">
+    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national1.png" width="400" />
+    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national2.png" width="400" />
+</p>
+<p float="center">
+    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national3.png" width="400" />
+    <img src="https://github.com/ding-zou/flutter-wechat/blob/master/snapshot/national4.png" width="400" />
+</p>
 
 
 ## DONE
@@ -41,6 +49,7 @@
 - [x] 搜索页
 - [x] Splash页
 - [x] 二维码扫描页(native+flutter)
+- [x] 多语言切换
 
 ## TODO
 
@@ -50,6 +59,7 @@
 - [ ] 我的资料卡片页
 - [ ] 设置页
 - [ ] 支付页
+- [ ] 多主题
 
 
 

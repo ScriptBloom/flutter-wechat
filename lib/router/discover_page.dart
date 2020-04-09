@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/api/discover_api.dart';
+import 'package:flutter_wechat/language/my_locale.dart';
 import 'package:flutter_wechat/model/discover_model.dart';
 
-import '../constant.dart';
+import '../common/constant.dart';
 /// 发现页面
 class DiscoverPage extends StatefulWidget {
   @override
@@ -77,7 +78,7 @@ class StateHomePage extends State<DiscoverPage> {
               ),
               Container(
                 child: Text(
-                  title,
+                  MyLocalization.of(context).getDicover(title),
                   style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
@@ -139,7 +140,7 @@ class StateHomePage extends State<DiscoverPage> {
               children: <Widget>[
                 Container(
                   child: Text(
-                    "发现",
+                    MyLocalization.of(context).disTitle,
                     style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18,

@@ -4,20 +4,23 @@ class MineApi{
   static List<MineModel> mock(){
     List<MineModel> _mineModels = [];
     _mineModels.add(MineModel(
-        assets: "images/ic_wallet.png", title: "支付", isDownDivider: true));
+        assets: "images/ic_wallet.png", title: "pay", isDownDivider: true));
     _mineModels.add(MineModel(assets: "images/ic_collections.png",
-        title: "收藏",
+        title: "favo",
         isDownDivider: false));
     _mineModels.add(MineModel(
-        assets: "images/ic_album.png", title: "相册", isDownDivider: false));
+        assets: "images/ic_album.png", title: "post", isDownDivider: false));
     _mineModels.add(MineModel(assets: "images/ic_cards_wallet.png",
-        title: "卡包",
+        title: "card",
         isDownDivider: false));
     _mineModels.add(MineModel(
-        assets: "images/ic_emotions.png", title: "表情", isDownDivider: true));
+        assets: "images/ic_emotions.png", title: "sticker", isDownDivider: true));
     _mineModels.add(MineModel(assets: "images/ic_settings.png",
-        title: "设置",
+        title: "setting",
         rightText: "账号未保护",
+        isDownDivider: false));
+    _mineModels.add(MineModel(assets: "images/ic_settings.png",
+        title: "language",
         isDownDivider: false));
     return _mineModels;
   }

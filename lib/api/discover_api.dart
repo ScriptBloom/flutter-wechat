@@ -5,39 +5,39 @@ class DiscoverApi{
     List<DiscoverModel> _discoverModel = [];
     _discoverModel.add(DiscoverModel(
         assets: "images/ic_social_circle.png",
-        title: "朋友圈",
+        title: "moments",
         imgUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStSJPuGbyKL4NnEPTuyumS9CkheNYQdmpLwHW5VJ1kOCCoUpj9",
         isDownDivider: true));
     _discoverModel.add(DiscoverModel(
         assets: "images/ic_bottle_msg.png",
-        title: "视频号",
+        title: "channels",
         isDownDivider: true));
     _discoverModel.add(DiscoverModel(
         assets: "images/ic_quick_scan.png",
-        title: "扫一扫",
+        title: "scan",
         isDownDivider: false));
     _discoverModel.add(DiscoverModel(
         assets: "images/ic_shake_phone.png",
-        title: "摇一摇",
+        title: "shake",
         isDownDivider: true));
     _discoverModel.add(DiscoverModel(
-        assets: "images/ic_feeds.png", title: "看一看", isDownDivider: false));
+        assets: "images/ic_feeds.png", title: "look", isDownDivider: false));
     _discoverModel.add(DiscoverModel(
         assets: "images/ic_quick_search.png",
-        title: "搜一搜",
+        title: "search",
         isDownDivider: true));
     _discoverModel.add(DiscoverModel(
         assets: "images/ic_people_nearby.png",
-        title: "附近的人",
+        title: "near",
         isDownDivider: true));
     _discoverModel.add(DiscoverModel(
-        assets: "images/ic_shopping.png", title: "购物", isDownDivider: false));
+        assets: "images/ic_shopping.png", title: "shopping", isDownDivider: false));
     _discoverModel.add(DiscoverModel(
-        assets: "images/ic_game_entry.png", title: "游戏", isDownDivider: true));
+        assets: "images/ic_game_entry.png", title: "game", isDownDivider: true));
     _discoverModel.add(DiscoverModel(
         assets: "images/ic_mini_program.png",
-        title: "小程序",
+        title: "mini",
         isDownDivider: true));
     return _discoverModel;
   }

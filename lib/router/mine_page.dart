@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/api/mine_api.dart';
+import 'package:flutter_wechat/language/my_locale.dart';
 import 'package:flutter_wechat/model/mine_model.dart';
 
-import '../constant.dart';
+import '../common/constant.dart';
+import 'language_page.dart';
+
 /// 我的页面
 class MinePage extends StatefulWidget {
   @override
@@ -29,14 +32,16 @@ class StateMinePage extends State<MinePage> {
     list.add(_titleBar());
     list.add(_mineAccountItem());
     list.add(Container(
-      height: 10, color: Color(BG_COLOR),
+      height: 10,
+      color: Color(BG_COLOR),
     ));
     _mineModels.forEach((o) {
       list.add(
           _mineItem(assets: o.assets, title: o.title, rightText: o.rightText));
       if (o.isDownDivider) {
         list.add(Container(
-          height: 10, color: Color(BG_COLOR),
+          height: 10,
+          color: Color(BG_COLOR),
         ));
       } else {
         list.add(Divider(
@@ -56,51 +61,60 @@ class StateMinePage extends State<MinePage> {
   /// 每个我的页面的一个功能导航Item
   Widget _mineItem(
       {String assets, String title, String rightText, bool isArrow = true}) {
-    return Container(
-      width: double.maxFinite,
-      padding: EdgeInsets.only(bottom: 7, top: 7),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(left: 10, right: 20,bottom: 7,top: 7),
-                child: Image.asset(
-                  assets,
-                  height: 30,
-                  width: 30,
+    return GestureDetector(
+      onTap: () {
+        if (title == "language") {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LanguagePage()));
+        }
+      },
+      child: Container(
+        width: double.maxFinite,
+        padding: EdgeInsets.only(bottom: 7, top: 7),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  padding:
+                      EdgeInsets.only(left: 10, right: 20, bottom: 7, top: 7),
+                  child: Image.asset(
+                    assets,
+                    height: 30,
+                    width: 30,
+                  ),
                 ),
-              ),
-              Container(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: Colors.black87),
-                ),
-              )
-            ],
-          ),
-          rightText != null
-              ? Container(
-            padding: EdgeInsets.only(right: 10),
-            child: Text(
-              rightText,
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+                Container(
+                  child: Text(
+                    MyLocalization.of(context).getMineItem(title),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: Colors.black87),
+                  ),
+                )
+              ],
             ),
-          )
-              : Container(
-            padding: EdgeInsets.only(right: 10, left: 8),
-            child: Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.grey,
-              size: 15,
-            ),
-          )
-        ],
+            rightText != null
+                ? Container(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Text(
+                      rightText,
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  )
+                : Container(
+                    padding: EdgeInsets.only(right: 10, left: 8),
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.grey,
+                      size: 15,
+                    ),
+                  )
+          ],
+        ),
       ),
     );
   }
@@ -140,7 +154,11 @@ class StateMinePage extends State<MinePage> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
-                "images/avatar.png", fit: BoxFit.cover, height: 60, width: 60,),
+                "images/avatar.png",
+                fit: BoxFit.cover,
+                height: 60,
+                width: 60,
+              ),
             ),
           ),
           Column(
@@ -148,33 +166,43 @@ class StateMinePage extends State<MinePage> {
             children: <Widget>[
               Container(
                 padding: EdgeInsets.only(bottom: 8),
-                child: Text('Grow', style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87
-                ),),
+                child: Text(
+                  'Grow',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87),
+                ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                Container(
-                  padding: EdgeInsets.only(right: 70),
-                  child: Text("微信号： Hello World",
-                    style: TextStyle(color: Colors.grey, fontSize: 17),),
-                ),
-                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.only(right: 10),
-                        child: Image.asset(
-                      "images/ic_qrcode_preview_tiny.png", width:14,
-                      height: 14,)),
-                    Container(
-                        padding: EdgeInsets.only(right: 5),child: Icon(
-                      Icons.arrow_forward_ios, size: 14, color: Colors.grey,)),
-                  ],
-                )
-              ]),
+                      padding: EdgeInsets.only(right: 40),
+                      child: Text(
+                        MyLocalization.of(context).wxId + "： Hello World",
+                        style: TextStyle(color: Colors.grey, fontSize: 17),
+                      ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Container(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Image.asset(
+                              "images/ic_qrcode_preview_tiny.png",
+                              width: 14,
+                              height: 14,
+                            )),
+                        Container(
+                            padding: EdgeInsets.only(right: 5),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 14,
+                              color: Colors.grey,
+                            )),
+                      ],
+                    )
+                  ]),
             ],
           )
         ],

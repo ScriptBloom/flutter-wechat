@@ -1,16 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wechat/constant.dart';
+import 'package:flutter_wechat/common/constant.dart';
+import 'package:flutter_wechat/language/my_locale.dart';
 import 'package:flutter_wechat/widget/search_bar.dart';
 
 /// 搜索页面
 const List<String> CONTENT = [
-  "朋友圈",
-  "文章",
-  "公众号",
-  "小程序",
-  "音乐",
-  "表情",
+  "moments",
+  "article",
+  "official account",
+  "mini",
+  "music",
+  "sticker",
 ];
 const int LINE_COUNT = 3;
 
@@ -40,7 +41,7 @@ class StateSearchPage extends State<SearchPage> {
   _searchBar() {
     return SearchBar(
       searchBarType: SearchBarType.search_page,
-      hint: "搜索",
+      hint: MyLocalization.of(context).search,
     );
   }
 
@@ -50,7 +51,7 @@ class StateSearchPage extends State<SearchPage> {
       margin: EdgeInsets.only(top: 35, bottom: 30),
       child: Center(
         child: Text(
-          "搜索指定内容",
+          MyLocalization.of(context).specialContent,
           style: TextStyle(fontSize: 13, color: Colors.grey),
         ),
       ),
@@ -99,7 +100,7 @@ class StateSearchPage extends State<SearchPage> {
                   child: _buildDivider()),
               Center(
                 child: Text(
-                  str,
+                  MyLocalization.of(context).getSearchContentKey(str),
                   style: TextStyle(fontSize: 15, color: Colors.blue[900]),
                 ),
               )

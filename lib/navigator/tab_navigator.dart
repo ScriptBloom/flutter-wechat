@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_wechat/constant.dart';
+import 'package:flutter_wechat/common/constant.dart';
+import 'package:flutter_wechat/language/my_locale.dart';
 import 'package:flutter_wechat/router/contact_page.dart';
 import 'package:flutter_wechat/router/discover_page.dart';
 import 'package:flutter_wechat/router/home_page.dart';
@@ -88,10 +89,10 @@ class _StateTabNavigator extends State<TabNavigator>
           });
         },
         items: [
-          _bottomNavItemBadge(0xe608, 0xe603, "微信", 0, isBadge: true),
-          _bottomNavItemBadge(0xe601, 0xe656, "通讯录", 1, isBadge: true),
-          _bottomNavItemBadge(0xe600, 0xe671, "发现", 2, isBadge: true),
-          _bottomNavItemBadge(0xe6c0, 0xe626, "我", 3, isBadge: true),
+          _bottomNavItemBadge(0xe608, 0xe603, MyLocalization.of(context).icon1, 0, isBadge: true),
+          _bottomNavItemBadge(0xe601, 0xe656, MyLocalization.of(context).icon2, 1, isBadge: true),
+          _bottomNavItemBadge(0xe600, 0xe671, MyLocalization.of(context).icon3, 2, isBadge: true),
+          _bottomNavItemBadge(0xe6c0, 0xe626, MyLocalization.of(context).icon4, 3, isBadge: true),
         ],
       ),
     );

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/api/home_api.dart';
+import 'package:flutter_wechat/language/my_locale.dart';
 import 'package:flutter_wechat/main.dart';
 import 'package:flutter_wechat/model/chat_model.dart';
 import 'package:flutter_wechat/native/qrscan_activity.dart';
@@ -12,8 +13,8 @@ import 'package:flutter_wechat/router/search_page.dart';
 import 'package:flutter_wechat/widget/qrscan_wechat.dart';
 import 'package:flutter_wechat/widget/search_bar.dart';
 
-import '../common.dart';
-import '../constant.dart';
+import '../common/common.dart';
+import '../common/constant.dart';
 
 /// 首页 聊天页面
 class HomePage extends StatefulWidget {
@@ -75,7 +76,7 @@ class StateHomePage extends State<HomePage> {
                 ),
                 Container(
                   child: Text(
-                    "微信 (325)",
+                    MyLocalization.of(context).homeTitle+" (325)",
                     style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18,
@@ -144,7 +145,7 @@ class StateHomePage extends State<HomePage> {
       child: SearchBar(
         enable: false,
         searchBarType: SearchBarType.normal_page,
-        hint: "搜索",
+        hint: MyLocalization.of(context).search,
         inputBoxClick: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => SearchPage()));

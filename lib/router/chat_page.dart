@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wechat/constant.dart';
+import 'package:flutter_wechat/common/constant.dart';
 
 /// 聊天页
 class ChatPage extends StatelessWidget {

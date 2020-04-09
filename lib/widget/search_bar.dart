@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wechat/constant.dart';
+import 'package:flutter_wechat/common/constant.dart';
+import 'package:flutter_wechat/language/my_locale.dart';
 
-import '../common.dart';
+import '../common/common.dart';
 
 /// 自定义微信搜索栏
 /// 两种样式
@@ -145,7 +146,7 @@ class StateSearchBar extends State<SearchBar> {
                       Navigator.pop(context);
                     },
                     child: Text(
-                      "取消",
+                      MyLocalization.of(context).cancel,
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w100,

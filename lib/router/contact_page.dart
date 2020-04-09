@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/api/contact_api.dart';
+import 'package:flutter_wechat/language/my_locale.dart';
 import 'package:flutter_wechat/model/contact_model.dart';
 import 'package:flutter_wechat/router/search_page.dart';
 import 'package:flutter_wechat/widget/search_bar.dart';
 
-import '../constant.dart';
+import '../common/constant.dart';
 
 /// 通讯录页面
 
@@ -111,10 +112,10 @@ class StateContactPage extends State<ContactPage> {
     List<ContactModel> commonList = ContactApi.mock();
     _starFriendsList.addAll(commonList);
     _baseContactList.addAll([
-      ContactModel(type: 0, url: "images/ic_new_friend.png", name: "新的朋友"),
-      ContactModel(type: 0, url: "images/ic_group_chat.png", name: "群聊"),
-      ContactModel(type: 0, url: "images/ic_tag.png", name: "标签"),
-      ContactModel(type: 0, url: "images/ic_public_account.png", name: "公众号")
+      ContactModel(type: 0, url: "images/ic_new_friend.png", name: "new friend"),
+      ContactModel(type: 0, url: "images/ic_group_chat.png", name: "group"),
+      ContactModel(type: 0, url: "images/ic_tag.png", name: "tags"),
+      ContactModel(type: 0, url: "images/ic_public_account.png", name: "official account")
     ]);
     _letterList.addAll(commonList);
     _letterList.addAll(commonList);
@@ -201,7 +202,7 @@ class StateContactPage extends State<ContactPage> {
   List<Widget> _basicContactItems() {
     List<Widget> list = [];
     list.addAll(_baseContactList
-        .map((o) => _commonItem(type: o.type, url: o.url, name: o.name)));
+        .map((o) => _commonItem(type: o.type, url: o.url, name: MyLocalization.of(context).getCont(o.name))));
     return list;
   }
 
@@ -239,7 +240,7 @@ class StateContactPage extends State<ContactPage> {
                 ),
                 Container(
                   child: Text(
-                    "通讯录",
+                    MyLocalization.of(context).conTitle,
                     style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18,
@@ -267,7 +268,7 @@ class StateContactPage extends State<ContactPage> {
       child: SearchBar(
         enable: false,
         searchBarType: SearchBarType.normal_page,
-        hint: "搜索",
+        hint: MyLocalization.of(context).search,
         inputBoxClick: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => SearchPage()));
