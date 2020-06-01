@@ -52,8 +52,10 @@ class StateMinePage extends State<MinePage> {
       }
     });
     return Scaffold(
-      body: Column(
-        children: list,
+      body: SingleChildScrollView(
+        child: Column(
+          children: list,
+        ),
       ),
     );
   }
