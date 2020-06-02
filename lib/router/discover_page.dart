@@ -6,6 +6,7 @@ import 'package:flutter_wechat/model/discover_model.dart';
 import 'package:flutter_wechat/router/moments/moments_page.dart';
 
 import '../common/constant.dart';
+
 /// 发现页面
 class DiscoverPage extends StatefulWidget {
   @override
@@ -34,13 +35,13 @@ class StateHomePage extends State<DiscoverPage> {
       _titleBar(),
     );
     _discoverModel.forEach((o) {
-      list.add(
-          _discoverItem(assets: o.assets, title: o.title, imgUrl: o.imgUrl));
+      list.add(_discoverItem(assets: o.assets, title: o.title, imgUrl: o.imgUrl));
       if (o.isDownDivider) {
         list.add(Container(
-          height: 10,color: Color(BG_COLOR),
+          height: 10,
+          color: Color(BG_COLOR),
         ));
-      }else{
+      } else {
         list.add(Divider(
           height: 1,
           color: Colors.grey[400],
@@ -62,14 +63,17 @@ class StateHomePage extends State<DiscoverPage> {
   Widget _discoverItem(
       {String assets, String title, String imgUrl, bool isBadge = true}) {
     return GestureDetector(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(
-            builder: (context) => MomentsPage()));
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        if (title == "moments") {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MomentsPage()));
+        }
       },
       child: Container(
         height: 50,
         width: double.maxFinite,
-        padding: EdgeInsets.only(bottom: 7,top: 7),
+        padding: EdgeInsets.only(bottom: 7, top: 7),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -97,38 +101,44 @@ class StateHomePage extends State<DiscoverPage> {
             ),
             Row(
               children: <Widget>[
-                imgUrl!=null?
-                    Container(
-                      height: 43,width: 40,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: <Widget>[
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(5),
-                            child: Image.network(
-                              imgUrl,
-                              width: 35,
-                              height: 35,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Positioned(
-                            top: 0,
-                            right: 0,
-                            child: ClipOval(
-                              child: Container(
-                                width: 7,
-                                height: 7,
-                                color: Colors.red,
+                imgUrl != null
+                    ? Container(
+                        height: 43,
+                        width: 40,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: <Widget>[
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(5),
+                              child: Image.network(
+                                imgUrl,
+                                width: 35,
+                                height: 35,
+                                fit: BoxFit.cover,
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                    ):Container(),
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: ClipOval(
+                                child: Container(
+                                  width: 7,
+                                  height: 7,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    : Container(),
                 Container(
                   padding: EdgeInsets.only(right: 10, left: 8),
-                  child: Icon(Icons.arrow_forward_ios,color: Colors.grey,size: 15,),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.grey,
+                    size: 15,
+                  ),
                 )
               ],
             )

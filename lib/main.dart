@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             theme: ThemeData(
               primarySwatch: Colors.green,
+              platform: TargetPlatform.iOS,
             ),
             onGenerateTitle: (BuildContext context) {
               return MyLocalization

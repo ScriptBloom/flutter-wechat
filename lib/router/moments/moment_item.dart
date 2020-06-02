@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/model/moments/moment_model.dart';
-import 'package:flutter_wechat/router/moments/cl_flow.dart';
+import 'package:flutter_wechat/widget/cl_flow.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 class MomentItem extends StatefulWidget {
   final MomentModel data;
@@ -106,15 +108,26 @@ class StateMomentItem extends State<MomentItem> {
 
   Widget _buildPureOnePic() {
     return _buildWithContent(
-      Container(
-          alignment: Alignment.topLeft,
-          margin: EdgeInsets.only(left: 20, top: 15, bottom: 15),
-          child: Image.asset(
-            widget.data.authorAvatar ?? "images/avatar.png",
-            width: 200,
-            height: 200,
-            fit: BoxFit.cover,
-          )),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context)=>Container(
+              child: PhotoView(
+                imageProvider: AssetImage(widget.data.authorAvatar ?? "images/avatar.png"),
+              ),
+            )
+          ));
+        },
+        child: Container(
+            alignment: Alignment.topLeft,
+            margin: EdgeInsets.only(left: 20, top: 15, bottom: 15),
+            child: Image.asset(
+              widget.data.authorAvatar ?? "images/avatar.png",
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
+            )),
+      ),
     );
   }
 
